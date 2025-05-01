@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	{% block css %} {% endblock %}
+	<style>
+		html {
+			scroll-behavior: smooth;
+		}
+    </style>
+</head>
+<body class="bg-gray-900">
+	<div class="flex flex-col min-h-screen">
+		<nav class="bg-slate-700 p-4 text-sky-500">
+			<div class="container mx-auto flex flex-wrap justify-between items-center">
+				<a href="#" class="font-bold text-xl">Flight Price Predictor</a>
+				<button id="menu-btn" class="md:hidden focus:outline-none text-2xl">☰</button>
+				<div id="menu" class="w-full md:w-auto hidden md:flex flex-col md:flex-row space-x-4 md:space-x-6 space-y-4 md:space-y-0 mt-4 md:mt-0">
+					<a href="/home" class="hover:text-gray-300">Home</a>
+					<a href="/about" class="hover:text-gray-300">About</a>
+					<a href="#contact" class="hover:text-blue-500 transition">Contacts</a>
+				</div>
+			</div>
+		</nav>
+
+		{% with messages = get_flashed_messages(with_categories=True) %}
+			{% if messages %}
+				<div  id="flash-container">
+					{% for category, message in messages %}
+						{% if category == 'danger' %}
+							<div class="fixed top-0 left-0 w-full rounded-xl bg-red-300 text-red-600 text-center text-xl py-1 z-50 mt-16">
+								<p>{{ message }}</p>
+							</div>
+						{% elif category == 'warning' %}
+							<div class="fixed top-0 left-0 w-full rounded-xl bg-yellow-200 text-yellow-600 text-center text-xl py-1 z-50 mt-16">
+								<p>{{ message }}</p>
+							</div>
+						{% elif category == 'info' %}
+							<div class="fixed top-0 left-0 w-full rounded-xl bg-blue-300 text-blue-600 text-center text-xl py-1 z-50 mt-16">
+								<p>{{ message }}</p>
+							</div>
+						{% else %}
+							<div class="fixed top-0 left-0 w-full rounded-xl bg-green-300 text-green-600 text-center text-xl py-1 z-50 mt-16">
+								<p>{{ message }}</p>
+							</div>
+						{% endif %}
+					{% endfor %}
+				</div>
+			{% endif %}
+		{% endwith %}
+
+		<div class="flex items-center justify-evenly bg-gray-900 p-4 min-h-screen">
+			{% block content %}
+			{% endblock %}
+		</div>
+	</div>
+
+	<footer id="contact" class="bg-slate-700 text-white py-8 mt-auto">
+        <div class="container mx-auto flex flex-col items-center">
+            <h2 class="text-2xl font-semibold mb-4 text-sky-500">Contact Me</h2>
+            <div class="flex space-x-6 mb-4">
+				<a href="https://github.com/Jay-Dholu" target="_blank" class="text-2xl hover:text-blue-400">
+					<!--<i class="fab fa-github"></i>-->
+					<img src="{{ url_for('static', filename='images/github-logo.png') }}" alt="GitHub Logo" class="w-8 h-8 inline">
+				</a>
+				<a href="https://linkedin.com/in/jay-dholu-433a582b1" target="_blank" class="text-2xl hover:text-blue-400">
+					<!--<i class="fab fa-linkedin"></i>-->
+					<img src="{{ url_for('static', filename='images/linkedin-logo.png') }}" alt="Linkedin Logo" class="w-8 h-8 inline">
+				</a>
+				<a href="https://x.com/jay_dholu" target="_blank" class="text-2xl hover:text-blue-400">
+					<!--<i class="fab fa-twitter"></i>-->
+					<img src="{{ url_for('static', filename='images/x-logo.png') }}" alt="X Logo" class="w-5 h-5 inline mt-1">
+				</a>
+				<a href="mailto:jaydholu074@gmail.com" target="_blank" class="text-2xl hover:text-blue-400">
+					<!--<i class="fab fa-twitter"></i>-->
+					<img src="{{ url_for('static', filename='images/email-logo.png') }}" alt="Email Logo" class="w-7 h-7 inline mt-1">
+				</a>
+			</div>
+            <p class="text-sm text-gray-400">© 2025 Jay Dholu. All rights reserved.</p>
+        </div>
+    </footer>
+
+	<script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
+</body>
+</html>

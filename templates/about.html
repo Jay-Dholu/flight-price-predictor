@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block css %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock css %}
+
+{% block content %}
+	<div class="flex flex-col justify-center text-white">
+		<p align="center" class="text-3xl text-sky-500"><b>FLIGHT PRICE PREDICTOR MODEL</b></p>
+		<p align="center" class="text-lg mt-2 text-sky-500">- Jay Dholu</p>
+		<div class="container bg-slate-700 mt-16 rounded-xl px-6 py-4">
+			<p class="text-xl text-sky-600">About Flight Price Predictor</p>
+			<p>Welcome to <strong>Flight Price Predictor</strong> – a web application designed to help users estimate the cost of airline tickets using machine learning. This project aims to simplify your flight planning by offering real-time price predictions based on past data and key flight features.</p>
+			<br>
+			<p class="text-xl text-sky-500">How It Works</p>
+			<p>The model uses a dataset containing flight information like airline, source, destination, journey duration, and number of stops. I applied machine learning algorithms such as <strong>Random Forest</strong> and <strong>XGBoost</strong> to predict prices with a high degree of accuracy.</p>
+			<p>Technologies used in this project include Python, Pandas, Scikit-learn, Flask, and HTML/CSS for the frontend.</p>
+			<br>
+			<p class="text-xl text-sky-500">About Me</p>
+			<p>Hey! I'm <strong>Jay Dholu</strong>, a tech enthusiast and student with a passion for machine learning and AI. I love solving real-world problems with code and enjoy turning data into insights. This project reflects my journey into machine learning, data science and web development.</p>
+			<br>
+			<p class="text-xl text-sky-500">Let’s Connect</p>
+			<p>If you'd like to give feedback or just chat about tech, feel free to connect with me on links in Contacts.</p>
+		</div>
+	</div>
+{% endblock content %}

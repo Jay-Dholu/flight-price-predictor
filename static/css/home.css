@@ -1,0 +1,29 @@
+body {
+	font-family: 'Segoe UI', sans-serif;
+	background: #f0f2f5;
+}
+
+.header {
+  background-color: #1a73e8;
+  color: white;
+  padding: 20px 40px;
+  text-align: center;
+}
+
+.main {
+  max-width: 900px;
+  margin: 40px auto;
+  color: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+  margin-top: 25px;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.3s;
+}

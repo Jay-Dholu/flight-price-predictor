@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block css %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock css %}
+
+{% block content %}
+	<div class="flex flex-col items-center gap-y-12">
+		<div class="header rounded-2xl shadow-3xl mt-16 bg-gray-600">
+			<p class="text-3xl">Flight Price Predictor</p>
+			<p class="mt-4">Plan smarter. Fly cheaper.</p>
+		</div>
+
+		<div class="main bg-slate-700">
+			<h2>Welcome!</h2>
+			<p>This web app helps you predict flight ticket prices based on various details like airline, source, destination, travel duration, and more.</p>
+			<p>Powered by machine learning, it gives you an estimated cost before you book – helping you save both time and money.</p>
+			<div class="flex justify-center">
+				<a class="button bg-gray-600 hover:bg-gray-800 " href="/predict">Predict Flight Price</a>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="w-full max-w-md bg-slate-600 rounded-xl shadow-xl p-6">
+		<form action="" method="post" class="space-y-4 text-center">
+			{{ form.hidden_tag() }}
+			<div>
+				{{ form.date_of_journey.label(class="block text-center text-2xl font-medium mb-1 text-white") }}
+				{{ form.date_of_journey(class="w-full rounded-sm px-3 py-2 mb-2") }}
+
+				{{ form.airline.label(class="block text-center text-2xl font-medium mt-2 mb-1 text-white") }}
+				{{ form.airline(class="w-full rounded-sm px-3 py-2 mb-2") }}
+
+				{{ form.source.label(class="block text-center text-2xl font-medium mt-2 mb-1 text-white") }}
+				{{ form.source(class="w-full rounded-sm px-3 py-2 mb-2") }}
+
+				{{ form.destination.label(class="block text-center text-2xl font-medium mt-2 mb-1 text-white") }}
+				{{ form.destination(class="w-full rounded-sm px-3 py-2 mb-2") }}
+
+				{{ form.departure_time.label(class="block text-center text-2xl font-medium mt-2 mb-1 text-white") }}
+				{{ form.departure_time(class="w-full rounded-sm px-3 py-2 mb-2") }}
+
+				{{ form.arrival_time.label(class="block text-center text-2xl font-medium mt-2 mb-1 text-white") }}
+				{{ form.arrival_time(class="w-full rounded-sm px-3 py-2 mb-2") }}
+
+				{{ form.total_stops.label(class="block text-center text-2xl font-medium mt-2 mb-1 text-white") }}
+				{{ form.total_stops(class="w-full rounded-sm px-3 py-2 mb-2") }}
+
+				{{ form.additional_info.label(class="block text-center text-2xl font-medium mt-2 mb-1 text-white") }}
+				{{ form.additional_info(class="w-full rounded-sm px-3 py-2 mb-2") }}
+			</div>
+			<div>
+				{{ form.submit(class="w-1/3 bg-slate-800 hover:bg-slate-900 text-white text-md mt-2 px-2 py-2 rounded-xl") }}
+			</div>
+		</form>
+	</div>
+{% endblock content %}
