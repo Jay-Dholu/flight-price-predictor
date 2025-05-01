@@ -1,4 +1,3 @@
-import pytz
 import joblib
 import pandas as pd
 from datetime import datetime, timedelta
@@ -6,7 +5,6 @@ from flask import Flask, render_template, redirect, request, url_for, flash
 from forms import InputForm
 
 
-ist = pytz.timezone("Asia/Kolkata")
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "SmF5IGlzIGtpbmcgb2YgdGhlIHVuaXZlcnNlLiBIZSBpcyB1bmRlZmVhdGFibGUsIGV2ZW4gYnkgQWxpZW5zLg=="
 model = joblib.load("models/flight-price-predictor.joblib")
