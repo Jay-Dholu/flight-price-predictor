@@ -51,6 +51,10 @@ def predict():
                 "Additional_Info": form.additional_info.data
             }
 
+            if input_data['Total_Stops'] < 0:
+                flash("Can't have negative number of stops!", "danger")
+                return redirect(url_for('predict'))
+
             input_df = pd.DataFrame([input_data])
             predicted_price = model.predict(input_df)[0]
             message = f"Predicted price: ₹{predicted_price:,.0f}"
